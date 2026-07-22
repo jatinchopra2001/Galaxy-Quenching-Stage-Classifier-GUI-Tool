@@ -181,7 +181,7 @@ class GalaxyClassifier:
         self.button_frame = tk.Frame(self.window, bg="#2b2b2b")
         self.button_frame.pack(pady=(10, 5), fill=tk.X)
 
-        instructions = "KEYS: 1=SF, 2=QnR, 3=cQ, 4=nR, 5=fR, I/A/M/C=Flags, Backspace=Back, Enter=Save&Next, Esc=Quit"
+        instructions = "KEYS: 1=SF, 2=QnR, 3=cQ, 4= MX, 5=nR, 6=fR, I/A/M/C=Flags, Backspace=Back, Enter=Save&Next, Esc=Quit"
         tk.Label(self.window, text=instructions, font=("Arial", 10, "bold"),
                 bg="#2b2b2b", fg="#ffd700", wraplength=1300).pack(pady=(5, 10))
 
@@ -269,12 +269,13 @@ class GalaxyClassifier:
         self.clear_buttons()
 
         if self.current_step == "classify":
-            self.question_label.config(text=f"Galaxy: {self.current_galaxy_id}\n\nHow would you classify this galaxy?\n\n[1] SF  [2] QnR  [3] cQ  [4] nR  [5] fR")
+            self.question_label.config(text=f"Galaxy: {self.current_galaxy_id}\n\nHow would you classify this galaxy?\n\n[1] SF  [2] QnR  [3] cQ  [4] MX  [5] nR  [6] fR")
             self.add_button("SF [1]", lambda: self.set_classification("SF"))
             self.add_button("QnR [2]", lambda: self.set_classification("QnR"))
             self.add_button("cQ [3]", lambda: self.set_classification("cQ"))
-            self.add_button("nR [4]", lambda: self.set_classification("nR"))
-            self.add_button("fR [5]", lambda: self.set_classification("fR"))
+            self.add_button("MX [4]", lambda: self.set_classification("MX"))
+            self.add_button("nR [5]", lambda: self.set_classification("nR"))
+            self.add_button("fR [6]", lambda: self.set_classification("fR"))
 
         elif self.current_step == "confirm":
             flags_on = [k[0].upper() for k, v in self.flags.items() if v == 1]
@@ -345,8 +346,9 @@ class GalaxyClassifier:
             if key == "1": self.set_classification("SF")
             elif key == "2": self.set_classification("QnR")
             elif key == "3": self.set_classification("cQ")
-            elif key == "4": self.set_classification("nR")
-            elif key == "5": self.set_classification("fR")
+            elif key == "4": self.set_classification("MX")
+            elif key == "5": self.set_classification("nR")
+            elif key == "6": self.set_classification("fR")
 
     def on_backspace(self, event): 
         self.go_back()
