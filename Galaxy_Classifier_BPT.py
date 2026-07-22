@@ -6,16 +6,16 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 
 
-SAVE_FOLDER = r"/vol/alcina/data1/jchopra/committee/mismatch"
-OUTPUT_CSV_PATH = os.path.join(SAVE_FOLDER, "committee_mismatch_PM_bpt.csv")
+SAVE_FOLDER = r""
+OUTPUT_CSV_PATH = os.path.join(SAVE_FOLDER, "output_file.csv")
 
-INPUT_CSV_PATH = r"/vol/alcina/data1/jchopra/committee/mismatch/mismatched_PM_classifications.csv"
+INPUT_CSV_PATH = r"input_file.csv"
 
 # Quenching-stage maps, filenames: galaxy_{PLATEIFU}_map.png
-MAPS_FOLDER = r"/vol/alcina/data1/jchopra/committee/mismatch/PM"
+MAPS_FOLDER = r""
 
 # BPT diagrams, filenames: galaxy_{PLATEIFU}_bpt.png
-BPT_FOLDER = r"/vol/alcina/data1/jchopra/committee/mismatch/BPT"
+BPT_FOLDER = r""
 
 os.makedirs(SAVE_FOLDER, exist_ok=True)
 
